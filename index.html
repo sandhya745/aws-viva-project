@@ -1,39 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Guess The Number</title>
+    <meta charset="UTF-8">
+    <title>My Cloud Deployed Website</title>
     <style>
-        body{
-            font-family: Arial;
-            text-align:center;
-            margin-top:100px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        header {
+            background: #1f4aa8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #163a82;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .card {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background: #1f4aa8;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            background: #1f4aa8;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #163a82;
         }
     </style>
 </head>
 <body>
 
-    <h1>Guess The Number (1-10)</h1>
+<header>
+    <h1>My Cloud Deployed Website</h1>
+    <p>A simple AWS Amplify Deployment Demo</p>
+</header>
 
-    <input type="number" id="guess" min="1" max="10">
-    <button onclick="checkGuess()">Submit</button>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+</nav>
 
-    <p id="result"></p>
+<section class="hero" id="home">
+    <h1>Welcome to My Website</h1>
+    <p>This website is deployed using AWS Amplify as a part of cloud computing practical.</p>
+    <button onclick="showMessage()">Click for Demo</button>
+    <p id="msg" style="margin-top:15px;"></p>
+</section>
 
-    <script>
-        const secret = Math.floor(Math.random() * 10) + 1;
+<section class="section" id="services">
+    <h2>Services</h2>
 
-        function checkGuess(){
-            const userGuess = Number(document.getElementById("guess").value);
+    <div class="card">
+        <h3>Web Hosting</h3>
+        <p>Fast and scalable hosting using cloud services.</p>
+    </div>
 
-            if(userGuess === secret){
-                document.getElementById("result").innerHTML =
-                    "🎉 Correct!";
-            }else{
-                document.getElementById("result").innerHTML =
-                    "❌ Wrong! Try again.";
-            }
-        }
-    </script>
+    <div class="card">
+        <h3>Cloud Deployment</h3>
+        <p>Automated deployment with CI/CD integration.</p>
+    </div>
+
+    <div class="card">
+        <h3>Security</h3>
+        <p>Secure and reliable cloud infrastructure.</p>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <h2>About This Project</h2>
+    <p>
+        This is a simple static website created for demonstrating deployment
+        on AWS Amplify. It uses HTML, CSS, and JavaScript.
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Cloud Computing Practical | All Rights Reserved</p>
+</footer>
+
+<script>
+    function showMessage(){
+        document.getElementById("msg").innerHTML =
+        "Website successfully running on cloud 🚀";
+    }
+</script>
 
 </body>
 </html>
