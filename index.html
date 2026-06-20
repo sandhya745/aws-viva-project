@@ -1,152 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Cloud Deployed Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CloudSphere</title>
 
-        body {
-            background: #f4f6f9;
-            color: #333;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-        header {
-            background: #1f4aa8;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
 
-        nav {
-            background: #163a82;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 10px;
-        }
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
 
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: white;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+}
 
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:85vh;
+    padding:0 10%;
+}
 
-        .hero p {
-            font-size: 18px;
-            color: #666;
-        }
+.hero-text{
+    width:50%;
+}
 
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+.hero-text h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
 
-        .card {
-            display: inline-block;
-            background: white;
-            padding: 20px;
-            margin: 10px;
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+.hero-text p{
+    font-size:18px;
+    line-height:1.6;
+    color:#d1d5db;
+}
 
-        footer {
-            background: #1f4aa8;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
 
-        button {
-            margin-top: 15px;
-            padding: 10px 15px;
-            border: none;
-            background: #1f4aa8;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+.btn:hover{
+    background:#0ea5e9;
+}
 
-        button:hover {
-            background: #163a82;
-        }
-    </style>
+.hero-image{
+    width:40%;
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:400px;
+}
+
+.features{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.features h2{
+    margin-bottom:40px;
+    font-size:38px;
+}
+
+.feature-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.feature{
+    background:#1e293b;
+    padding:25px;
+    width:280px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.feature:hover{
+    transform:translateY(-10px);
+}
+
+.feature h3{
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.stats{
+    padding:70px 10%;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    background:#111827;
+}
+
+.stats h2{
+    font-size:40px;
+    color:#38bdf8;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#020617;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>My Cloud Deployed Website</h1>
-    <p>A simple Netlify Deployment Demo</p>
+    <div class="logo">☁ CloudSphere</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-</nav>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Deploy Your Ideas to the Cloud</h1>
+        <p>
+            Experience secure, scalable, and reliable cloud deployment.
+            This project demonstrates a website hosted on Netlify
+            for Cloud Computing practical work.
+        </p>
 
-<section class="hero" id="home">
-    <h1>Welcome to My Website</h1>
-    <p>This website is deployed using Netlify as a part of cloud computing practical.</p>
-    <button onclick="showMessage()">Click for Demo</button>
-    <p id="msg" style="margin-top:15px;"></p>
-</section>
-
-<section class="section" id="services">
-    <h2>Services</h2>
-
-    <div class="card">
-        <h3>Web Hosting</h3>
-        <p>Fast and scalable hosting using cloud services.</p>
+        <a href="#" class="btn" onclick="showMsg()">Launch Demo</a>
+        <p id="message" style="margin-top:15px;"></p>
     </div>
 
-    <div class="card">
-        <h3>Cloud Deployment</h3>
-        <p>Automated deployment with CI/CD integration.</p>
-    </div>
-
-    <div class="card">
-        <h3>Security</h3>
-        <p>Secure and reliable cloud infrastructure.</p>
+    <div class="hero-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/4144/4144780.png" alt="Cloud">
     </div>
 </section>
 
-<section class="section" id="about">
-    <h2>About This Project</h2>
-    <p>
-        This is a simple static website created for demonstrating deployment
-        on Netlify. It uses HTML, CSS, and JavaScript.
-    </p>
+<section class="features">
+    <h2>Why Choose Cloud Hosting?</h2>
+
+    <div class="feature-container">
+        <div class="feature">
+            <h3>⚡ Fast Performance</h3>
+            <p>Lightning-fast loading and global delivery.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🔒 Secure</h3>
+            <p>Reliable protection and secure infrastructure.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📈 Scalable</h3>
+            <p>Grow your application without limitations.</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div>
+        <h2>99.9%</h2>
+        <p>Uptime</p>
+    </div>
+
+    <div>
+        <h2>24/7</h2>
+        <p>Support</p>
+    </div>
+
+    <div>
+        <h2>100+</h2>
+        <p>Deployments</p>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Cloud Computing Practical | All Rights Reserved</p>
+    <p>© 2026 CloudSphere | Cloud Computing Practical</p>
 </footer>
 
 <script>
-    function showMessage(){
-        document.getElementById("msg").innerHTML =
-        "Website successfully running on cloud 🚀";
-    }
+function showMsg(){
+    document.getElementById("message").innerHTML =
+    "🚀 Website Successfully Running on Netlify Cloud!";
+}
 </script>
 
 </body>
